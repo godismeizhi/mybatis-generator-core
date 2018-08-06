@@ -106,8 +106,14 @@ public class SelectByPrimaryKeyElementGenerator extends
             sb.append(" = "); //$NON-NLS-1$
             sb.append(MyBatis3FormattingUtilities
                     .getParameterClause(introspectedColumn));
+			
+			//xiugai
+			sb.append("  and enable = 1");	
             answer.addElement(new TextElement(sb.toString()));
         }
+		
+		
+		
 
         if (context.getPlugins()
                 .sqlMapSelectByPrimaryKeyElementGenerated(answer,
